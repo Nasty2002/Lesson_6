@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 public class DashboardPage extends BasePage {
     private static String ENDPOINT = "/dashboard";
 
-    protected By PAGE_OPENED_IDENTIFIER = By.id("activityChart");
+    protected static By PAGE_OPENED_IDENTIFIER = By.id("activityChart");
 
-    protected By addProjectButtonSelector = By.id("sidebar-projects-add");
+    protected static By addProjectButtonSelector = By.id("sidebar-projects-add");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -22,11 +22,10 @@ public class DashboardPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        return !super.isPageOpened(PAGE_OPENED_IDENTIFIER);
+        return super.isPageOpened(PAGE_OPENED_IDENTIFIER);
     }
 
     public WebElement getAddProjectButton() {
         return driver.findElement(addProjectButtonSelector);
     }
-
 }

@@ -8,8 +8,8 @@ import untils.Waits;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected String BASE_URL;
     protected Waits waits;
+    protected String BASE_URL;
 
     public BasePage(WebDriver driver) {
         this(driver, false);
@@ -25,10 +25,14 @@ public abstract class BasePage {
         }
     }
 
-
     protected abstract void openPage();
 
     public boolean isPageOpened(By by) {
-        return waits.waitForVisibility(by).isDisplayed();
+        try {
+            return waits.waitForVisibility(by).isDisplayed();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return false;
+        }
     }
 }
