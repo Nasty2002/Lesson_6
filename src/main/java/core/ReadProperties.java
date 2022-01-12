@@ -18,6 +18,9 @@ import java.util.Properties;
 
         public static String getUrl() { return properties.getProperty("url"); }
         public static String getBrowserType() { return properties.getProperty("browserType"); }
+        public static String getBrowserName() {
+            return properties.getProperty("browser");
+        }
         public static Boolean getHeadless() {
             return properties.getProperty("headless").equalsIgnoreCase("false");
         }
@@ -26,5 +29,11 @@ import java.util.Properties;
         }
         public static String getPassword() {
             return properties.getProperty("password");
+        }
+        public static boolean isHeadless() {
+            return properties.getProperty("headless").equalsIgnoreCase("true");
+        }
+        public static int getTimeOut() {
+            return Integer.parseInt(properties.getProperty("timeout"));
         }
 }
