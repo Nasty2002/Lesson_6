@@ -14,11 +14,11 @@ public class LoginPage extends BasePage {
     private By password_Selector = By.id("password");
     private By login_Selector = By.id("button_primary");
 
+    private WebDriver driver;
+
     //конструктор страницы
     public LoginPage(WebDriver driver) {
         super(driver);
-
-
     }
 
     public boolean isPageOpened(){
