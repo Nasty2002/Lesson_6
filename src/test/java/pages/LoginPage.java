@@ -5,6 +5,7 @@ import core.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Optional;
 
 public class LoginPage extends BasePage{
     private static String ENDPOINT = "/auth/login/";
@@ -13,7 +14,9 @@ public class LoginPage extends BasePage{
     private By PAGE_OPENED_IDENTIFIER = By.className("logo-loginpage");
 
     private By email_Selector = By.id("name");
+
     private By password_Selector = By.id("password");
+
     private By login_Selector = By.id("button_primary");
 
     //конструктор страницы
@@ -26,8 +29,9 @@ public class LoginPage extends BasePage{
         driver.get(BASE_URL + ENDPOINT);
     }
 
+    @Override
     public boolean isPageOpened(){
-        return super.isPageOpened(PAGE_OPENED_IDENTIFIER);
+        return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
     //реализация геттеров элементов
