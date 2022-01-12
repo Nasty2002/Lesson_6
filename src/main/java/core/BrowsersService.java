@@ -8,8 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowsersService {
-    private WebDriver driver = null;
-    private DriverManagerType driverManagerType = null;
+    private WebDriver driver;
+    private DriverManagerType driverManagerType = DriverManagerType.CHROME;
 
     public BrowsersService() {
         this(ReadProperties.getBrowserName());
