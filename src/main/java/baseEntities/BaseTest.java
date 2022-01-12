@@ -18,7 +18,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        switch (ReadProperties.getBrowserType().toLowerCase(Locale.ROOT)){
+        switch (ReadProperties.getBrowserName().toLowerCase(Locale.ROOT)){
             case "chrome":
                 WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
 
@@ -26,7 +26,7 @@ public class BaseTest {
                 chromeOptions.addArguments("--disable-gpu");
                 chromeOptions.addArguments("--silent");
    //           chromeOptions.addArguments("--start-maximized");  //не работает на маке
-                chromeOptions.setHeadless(ReadProperties.getHeadless());
+                chromeOptions.setHeadless(ReadProperties.isHeadless());
 
                 driver= new ChromeDriver(chromeOptions);
                 break;
