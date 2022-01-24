@@ -1,4 +1,4 @@
-package tests;
+package tests.gui;
 
 import baseEntities.BaseTest;
 import models.Milestone;
@@ -6,8 +6,6 @@ import models.Project;
 import models.User;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import steps.MilestoneSteps;
-import steps.ProjectSteps;
 
 public class MilestoneTest extends BaseTest {
 
@@ -18,7 +16,7 @@ public class MilestoneTest extends BaseTest {
         Milestone milestone = new Milestone();
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(user);
+       //loginPage.login(user);
 
         projectSteps.addProject(project);
         milestoneSteps.createMilestone(project, milestone);

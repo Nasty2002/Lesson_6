@@ -21,11 +21,12 @@ public class BaseTest {
     protected MilestoneSteps milestoneSteps;
 
     @BeforeClass
-    public void openPage() {
+    public void setUp() {
         browsersService = new BrowsersService();
         driver.get(ReadProperties.getUrl());
         waits = new Waits(driver);
-
+        projectSteps = new ProjectSteps(driver);
+        milestoneSteps = new MilestoneSteps(driver);
 
         driver.get(ReadProperties.getUrl());
     }
