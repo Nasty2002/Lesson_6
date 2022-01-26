@@ -8,15 +8,16 @@ import org.testng.annotations.BeforeTest;
 
 import static io.restassured.RestAssured.given;
 
-public class baseApiTest {
+public class BaseApiTest {
 
     @BeforeTest
-    public void setUpApiTest(){
+    public void setupApiTest() {
         // Setup RestAssured
         RestAssured.baseURI = ReadProperties.getUrl();
 
         // Setup request Object
         RestAssured.requestSpecification = given()
-                .header(HTTP.CONTENT_TYPE, ContentType.JSON);
+                .header(HTTP.CONTENT_TYPE, ContentType.JSON)
+                .auth().preemptive().basic(ReadProperties.getUsername(), ReadProperties.getPassword());
     }
 }

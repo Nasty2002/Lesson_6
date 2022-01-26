@@ -9,6 +9,6 @@ public class BaseStep {
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;
-        this.waits = WebDriver(driver);
+        this.waits = new Waits(driver);
     }
 }

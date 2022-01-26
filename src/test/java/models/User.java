@@ -1,15 +1,14 @@
 package models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+@Data
+@Builder
+@ToString(exclude = "UUID")
 public class User {
     private String email;
     private String password;
+    private int UUID;
 }

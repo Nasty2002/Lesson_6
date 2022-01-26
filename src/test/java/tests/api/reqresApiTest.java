@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class ReqresApiTest {
+public class reqresApiTest {
 
     @Test
     public void simpleStepByStepApiTest() {
@@ -24,17 +24,16 @@ public class ReqresApiTest {
         // Setup request Object
         RequestSpecification httpRequest = given();
 
-        // Setup response Object
+        // Setup Response Object
         Response response = httpRequest.request(Method.GET, endpoint);
 
-        // Get response Status
+        // Get Response Status
         int statusCode = response.getStatusCode();
         System.out.println("Status Code: " + statusCode);
-
         Assert.assertEquals(statusCode, 200);
-        Assert.assertEquals(statusCode, HttpStatus.SC_OK); //равнозначно верхней строке
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
 
-        // Get response Body
+        // Get Response Body
         String responseBody = response.getBody().asString();
         System.out.println("Response: " + responseBody);
     }
