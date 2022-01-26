@@ -1,10 +1,9 @@
 package baseEntities;
 
+
 import core.ReadProperties;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import untils.Waits;
+import utils.Waits;
 
 public abstract class BasePage {
     protected static final int WAIT_FOR_PAGE_LOADED_IN_SECONDS = 30;

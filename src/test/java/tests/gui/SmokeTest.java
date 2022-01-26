@@ -8,8 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
-import untils.Randomization;
-import untils.Retry;
+import utils.Randomization;
+import utils.Retry;
 
 public class SmokeTest extends BaseTest {
     Project addProject;

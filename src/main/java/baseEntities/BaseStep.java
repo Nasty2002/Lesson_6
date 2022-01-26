@@ -1,7 +1,7 @@
 package baseEntities;
 
 import org.openqa.selenium.WebDriver;
-import untils.Waits;
+import utils.Waits;
 
 public class BaseStep {
     protected WebDriver driver;

@@ -8,12 +8,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import steps.MilestoneSteps;
 import steps.ProjectSteps;
-import untils.Listener;
-import untils.Waits;
+import utils.Listener;
+import utils.Waits;
 
 @Listeners(Listener.class)
 public class BaseTest {
-    protected WebDriver driver;
+    public WebDriver driver;
     private BrowsersService browsersService;
     protected Waits waits;
 
