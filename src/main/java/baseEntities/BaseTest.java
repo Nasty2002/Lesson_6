@@ -6,8 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import steps.MilestoneSteps;
-import steps.ProjectSteps;
+
 import utils.Listener;
 import utils.Waits;
 
